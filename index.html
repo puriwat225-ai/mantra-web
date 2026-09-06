@@ -324,7 +324,6 @@
     </div>
 
     <script>
-        // ข้อมูล 24 cards - copied from cards-data.js
         const CARDS_DATA = [
   {
     "image": "01_MAGNETIC.png",
@@ -501,7 +500,7 @@
     "symbol": "Becoming water",
     "color": "Slate Blue + Pearl",
     "affirmation": "I surrender what I cannot control.",
-    "ritual": "ยืนหากใจด้วยมือนิ้วหา พูด \"ปล่อย\"",
+    "ritual": "ยืนหากใจด้วยมือนิ้งหา พูด \"ปล่อย\"",
     "core": "การท้อแท้ไม่ใช่ความอ่อน มันคือการตัดสินใจว่า ไม่ต้องสู้ต่อไป",
     "name": "SURRENDER",
     "number": "14",
@@ -640,7 +639,7 @@
   }
 ];
 
-        let currentCardIndex = 0;
+        let currentCardIndex = Math.floor(Math.random() * CARDS_DATA.length);
 
         function renderCard() {
             const card = CARDS_DATA[currentCardIndex];
@@ -709,7 +708,7 @@
         }
 
         function nextCard() {
-            currentCardIndex = (currentCardIndex + 1) % CARDS_DATA.length;
+            currentCardIndex = Math.floor(Math.random() * CARDS_DATA.length);
             renderCard();
         }
 
@@ -740,7 +739,6 @@
             URL.revokeObjectURL(url);
         }
 
-        // Load first card
         renderCard();
     </script>
 </body>
